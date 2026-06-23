@@ -1,14 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* volta isso pra não estourar */
+}
+
+.cabecalho {
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #7e3e1c;
+}
+
 .cartao {
-    width: 100%;
+    width: calc(25% - 12px); /* 25% = 4 por linha, -12px compensa o gap */
     height: 200px;
-    position: relative; /* ADICIONA ISSO */
+    position: relative; /* ESSENCIAL pro flip */
     perspective: 1000px;
+}
+
+.cartao-imagem {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f5f2f2;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cabecalho-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+h1 {
+    color: #fff;
+    font-size: 24px;
+}
+
+footer {
+    background-color: #7e3e1c;
+    padding: 15px 25px;
+    color: #fff;
 }
 
 .cartao-interno {
     position: relative;
-    width: 100%;
-    height: 100%;
+    width: 100%; /* ADICIONA */
+    height: 100%; /* ADICIONA */
     transition: transform 0.8s;
     transform-style: preserve-3d;
 }
@@ -19,10 +70,10 @@
 
 .cartao-frente, .cartao-verso {
     position: absolute;
-    top: 0;      /* ADICIONA ISSO */
-    left: 0;     /* ADICIONA ISSO */
-    width: 100%;
-    height: 100%;
+    top: 0; /* ADICIONA */
+    left: 0; /* ADICIONA */
+    width: 100%; /* ADICIONA */
+    height: 100%; /* ADICIONA */
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     backface-visibility: hidden;
@@ -33,12 +84,11 @@
 }
 
 section {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); 
-  gap: 24px;
-  justify-content: center;
-  margin: 30px auto;
-  max-width: 1120px;
-  padding: 0 20px;
-  grid-auto-rows: 200px;
+    display: flex;
+    flex-wrap: wrap; /* QUEBRA LINHA: vira 2 linhas de 4 */
+    gap: 16px;
+    justify-content: center;
+    max-width: 1120px;
+    margin: 30px auto;
+    padding: 0 20px;
 }
