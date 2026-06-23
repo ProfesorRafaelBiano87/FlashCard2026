@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* evita cartão estourar por causa do padding */
 }
 
 .cabecalho {
@@ -12,12 +13,16 @@
 }
 
 .cartao {
-    width: 360px;
+    width: 100%; /* ocupa a célula do grid */
     height: 200px;
+    perspective: 1000px; /* melhora o flip 3D */
 }
 
 .cartao-imagem {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
 }
 
 body {
@@ -52,6 +57,8 @@ footer {
 
 .cartao-interno {
     position: relative;
+    width: 100%;
+    height: 100%;
     transition: transform 0.8s;
     transform-style: preserve-3d;
 }
@@ -62,6 +69,8 @@ footer {
 
 .cartao-frente, .cartao-verso {
     position: absolute;
+    width: 100%;
+    height: 100%;
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     backface-visibility: hidden;
@@ -73,9 +82,11 @@ footer {
 
 section {
   display: grid;
-  grid-template-columns: repeat(4, 260px);
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr); /* 4 colunas iguais */
+  gap: 24px; /* espaçamento entre cartões */
   justify-content: center;
   margin: 30px auto;
-  max-width: 1120px;
+  max-width: 1120px; /* 4 x 260px + 3 gaps ≈ 1120px */
+  padding: 0 20px; /* respiro nas laterais */
+  grid-auto-rows: 200px; /* força 2 linhas de 200px de altura */
 }
