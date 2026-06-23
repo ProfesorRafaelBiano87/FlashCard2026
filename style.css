@@ -82,11 +82,28 @@ footer {
 
 section {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 colunas iguais */
-  gap: 24px; /* espaçamento entre cartões */
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 24px;
   justify-content: center;
   margin: 30px auto;
-  max-width: 1120px; /* 4 x 260px + 3 gaps ≈ 1120px */
-  padding: 0 20px; /* respiro nas laterais */
-  grid-auto-rows: 200px; /* força 2 linhas de 200px de altura */
+  max-width: 1120px;
+  padding: 0 20px;
+  grid-auto-rows: 200px;
+}
+@media (max-width: 1024px) {
+  section {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
+    gap: 20px;
+  }
+}
+@media (max-width: 600px) {
+  section {
+    grid-template-columns: 1fr; 
+    max-width: 360px;
+    gap: 16px;
+  }
+  .cartao {
+    height: 180px;
+  }
 }
