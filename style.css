@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* volta isso pra não estourar */
 }
 
 .cabecalho {
@@ -13,17 +12,12 @@
 }
 
 .cartao {
-    width: calc(25% - 12px); /* 25% = 4 por linha, -12px compensa o gap */
+    width: 260px;
     height: 200px;
-    position: relative; /* ESSENCIAL pro flip */
-    perspective: 1000px;
 }
 
 .cartao-imagem {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 12px;
 }
 
 body {
@@ -58,8 +52,6 @@ footer {
 
 .cartao-interno {
     position: relative;
-    width: 100%; /* ADICIONA */
-    height: 100%; /* ADICIONA */
     transition: transform 0.8s;
     transform-style: preserve-3d;
 }
@@ -70,10 +62,6 @@ footer {
 
 .cartao-frente, .cartao-verso {
     position: absolute;
-    top: 0; /* ADICIONA */
-    left: 0; /* ADICIONA */
-    width: 100%; /* ADICIONA */
-    height: 100%; /* ADICIONA */
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     backface-visibility: hidden;
@@ -85,10 +73,5 @@ footer {
 
 section {
     display: flex;
-    flex-wrap: wrap; /* QUEBRA LINHA: vira 2 linhas de 4 */
     gap: 16px;
-    justify-content: center;
-    max-width: 1120px;
-    margin: 30px auto;
-    padding: 0 20px;
 }
