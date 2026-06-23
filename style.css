@@ -1,79 +1,95 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .cabecalho {
-    padding: 15px 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #7e3e1c;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #7e3e1c;
 }
 
 .cartao {
-    width: 460px;
-    height: 200px;
+  width: 260px;
+  height: 200px;
+  flex-shrink: 0; /* impede que os cartões encolham */
 }
 
 .cartao-imagem {
-    width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #f5f2f2;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f5f2f2;
 }
 
 main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.cabecalho-link {
-    color: #fff;
-    text-decoration: none;
-}
-
-h1 {
-    color: #fff;
-    font-size: 24px;
-}
-
-footer {
-    background-color: #7e3e1c;
-    padding: 15px 25px;
-    color: #fff;
-}
-
-.cartao-interno {
-    position: relative;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-}
-
-.cartao:hover .cartao-interno {
-    transform: rotateY(180deg);
-}
-
-.cartao-frente, .cartao-verso {
-    position: absolute;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    backface-visibility: hidden;
-}
-
-.cartao-verso {
-    transform: rotateY(180deg);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px;
 }
 
 section {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;           /* ← permite quebra de linha */
+  justify-content: center;   /* centraliza as linhas */
+  gap: 20px;                 /* espaço entre os cartões */
+  max-width: 1120px;         /* 4 cartões de 260px + gaps ≈ 1120px */
+  margin: 0 auto;
+}
+
+/* Flip card */
+.cartao-interno {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.cartao:hover .cartao-interno {
+  transform: rotateY(180deg);
+}
+
+.cartao-frente,
+.cartao-verso {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  backface-visibility: hidden;
+}
+
+.cartao-verso {
+  transform: rotateY(180deg);
+}
+
+/* Outros estilos */
+.cabecalho-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+h1 {
+  color: #fff;
+  font-size: 24px;
+}
+
+footer {
+  background-color: #7e3e1c;
+  padding: 15px 25px;
+  color: #fff;
+  text-align: center;
 }
