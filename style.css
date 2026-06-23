@@ -41,12 +41,12 @@ main {
 }
 
 section {
-  display: flex;
-  flex-wrap: wrap;           /* ← permite quebra de linha */
-  justify-content: center;   /* centraliza as linhas */
-  gap: 20px;                 /* espaço entre os cartões */
-  max-width: 1120px;         /* 4 cartões de 260px + gaps ≈ 1120px */
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 260px);   /* 4 colunas fixas */
+  gap: 20px;                                 /* espaço entre os cards */
+  justify-content: center;                   /* centraliza o conjunto */
+  margin: 30px auto;                         /* margem superior e centraliza */
+  max-width: 1120px;                         /* largura máxima para 4 cards */
 }
 
 /* Flip card */
