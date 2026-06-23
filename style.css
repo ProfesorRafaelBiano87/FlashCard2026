@@ -24,6 +24,7 @@ body {
   display: flex; 
   flex-direction: column; 
   min-height: 100vh; 
+  background-color: #0000ff;
   
 } 
 main { 
@@ -36,5 +37,11 @@ main {
 }
 
 h1 {
-  color: #fff;
+  color: #0000ff;
+  font-size: 24px;
+}
+footer{
+  background-color: #ffff00;
+   padding: 15px 25px; 
+   color: #fff; 
 }
