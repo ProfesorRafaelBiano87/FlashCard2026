@@ -12,7 +12,7 @@
 }
 
 .cartao {
-    width: 260px;
+    width: calc(25% - 12px);
     height: 200px;
 }
 
@@ -73,5 +73,10 @@ footer {
 
 section {
     display: flex;
+    flex-wrap: wrap; 
     gap: 16px;
+    justify-content: center;
+    max-width: 1120px;
+    margin: 30px auto;
+    padding: 0 20px;
 }
