@@ -1,58 +1,8 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* evita cartão estourar por causa do padding */
-}
-
-.cabecalho {
-    padding: 15px 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #7e3e1c;
-}
-
 .cartao {
-    width: 100%; /* ocupa a célula do grid */
-    height: 200px;
-    perspective: 1000px; /* melhora o flip 3D */
-}
-
-.cartao-imagem {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 12px;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #f5f2f2;
-}
-
-main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.cabecalho-link {
-    color: #fff;
-    text-decoration: none;
-}
-
-h1 {
-    color: #fff;
-    font-size: 24px;
-}
-
-footer {
-    background-color: #7e3e1c;
-    padding: 15px 25px;
-    color: #fff;
+    height: 200px;
+    position: relative; /* ADICIONA ISSO */
+    perspective: 1000px;
 }
 
 .cartao-interno {
@@ -69,6 +19,8 @@ footer {
 
 .cartao-frente, .cartao-verso {
     position: absolute;
+    top: 0;      /* ADICIONA ISSO */
+    left: 0;     /* ADICIONA ISSO */
     width: 100%;
     height: 100%;
     border-radius: 12px;
@@ -89,21 +41,4 @@ section {
   max-width: 1120px;
   padding: 0 20px;
   grid-auto-rows: 200px;
-}
-@media (max-width: 1024px) {
-  section {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 600px;
-    gap: 20px;
-  }
-}
-@media (max-width: 600px) {
-  section {
-    grid-template-columns: 1fr; 
-    max-width: 360px;
-    gap: 16px;
-  }
-  .cartao {
-    height: 180px;
-  }
 }
