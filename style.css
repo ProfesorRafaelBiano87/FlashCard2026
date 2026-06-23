@@ -12,9 +12,8 @@
 }
 
 .cartao {
-    width: calc(25% - 12px);
+    width: 100px;
     height: 200px;
-}
 
 .cartao-imagem {
     width: 100%;
