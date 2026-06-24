@@ -8,7 +8,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #0c93ee;
+    background-color: #eeea0c;
     font-family: Arial, sans-serif;
 }
 
@@ -17,16 +17,16 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #7e3e1c;
+    background-color: #a5e70c;
 }
 
 .cabecalho-link {
-    color: #fff;
+    color: #0b0b0b;
     text-decoration: none;
 }
 
 h1 {
-    color: #fff;
+    color: #0d0d0d;
     font-size: 24px;
 }
 
@@ -40,14 +40,14 @@ main {
 
 main h2 {
     margin-bottom: 30px;
-    color: #333;
+    color: #0d0d0d;
     text-align: center;
 }
 
 footer {
-    background-color: #7e3e1c;
+    background-color: #a5e70c;
     padding: 15px 25px;
-    color: #fff;
+    color: #0b0b0b;
     text-align: center;
 }
 
@@ -73,7 +73,7 @@ section {
     position: relative;
     width: 100%;
     height: 100%;
-    transition: transform 0.8s;
+    transition: transform 0.8s; 
     transform-style: preserve-3d;
 }
 
@@ -88,9 +88,9 @@ section {
     width: 100%;
     height: 100%;
     border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 12px rgba(16, 15, 15, 0.15);
     backface-visibility: hidden;
-    background-color: #fff;
+    background-color: #afe6e7;
     overflow: hidden;
     display: flex;
     flex-direction: column;
